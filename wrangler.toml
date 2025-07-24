@@ -1,0 +1,21 @@
+name = "web"
+main = "src/lib.rs"
+compatibility_date = "2025-07-25"
+
+[build]
+command = "cargo build --release --target wasm32-unknown-unknown"
+
+[build.upload]
+format = "modules"
+
+[[r2_buckets]]
+binding = "SCRAPER_BUCKET"
+bucket_name = "image"
+
+[[env.production.secrets]]
+name = "CLOUDFLARE_API_TOKEN"
+value = "IpfsXsWiE9BiPQC_H-5B6rnbyM9jdYnUlONyVbEb"
+
+[[env.production.secrets]]
+name = "CLOUDFLARE_ACCOUNT_ID"
+value = "c633744eb31adb64ca1dc2ad9e89a645"
